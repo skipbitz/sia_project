@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Campus Borrowing System</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Campus Borrowing & Returning System</h1>
+    <p>Welcome! Please <a href="/login.html">login</a> or <a href="#" id="registerLink">register</a>.</p>
+    <div id="public-equipment">
+      <h2>Available Equipment</h2>
+      <select id="categoryFilter">
+        <option value="">All</option>
+        <option value="technical">Technical</option>
+        <option value="sports">Sports</option>
+        <option value="lab">Lab</option>
+      </select>
+      <div id="equipmentList"></div>
+    </div>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>
