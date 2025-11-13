@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="logo"><img src="/assets/CCALOGO.png" alt="CCA logo" style="width:72px;margin-bottom:18px;"/></div>
+      <nav>
+        <a href="#" class="nav-item active" data-view="home">Home</a>
+        <a href="#" class="nav-item" data-view="myrequest">My Request</a>
+        <a href="#" class="nav-item" data-view="history">Borrowing History</a>
+        <a href="#" class="nav-item" data-view="return">Return Equipment</a>
+      </nav>
+    </aside>
+
+    <div class="main">
+      <header class="main-header">
+        <div class="title">User Dashboard</div>
+        <div class="actions"><button id="logoutBtn" class="btn small">Logout</button></div>
+      </header>
+
+      <section class="content">
+        <div id="home" class="view">
+          <div class="top-actions" style="display:flex;gap:18px;align-items:center;justify-content:flex-start;padding:18px 0">
+            <button id="btnViewEquipment" class="btn">View Available Equipment</button>
+            <button id="btnSubmitBorrow" class="btn">Submit Borrowing Request</button>
+            <button id="btnSubmitReturn" class="btn">Submit Returning Equipment</button>
+          </div>
+          <p class="muted">Welcome — use the sidebar to navigate.</p>
+        </div>
+
+        <div id="myrequest" class="view" style="display:none">
+          <h2 class="page-title">Submit Borrow Request</h2>
+          <div>
+            <label>Category
+              <select id="categoryFilterUser">
+                <option value="">All</option>
+                <option value="technical">Technical</option>
+                <option value="sports">Sports</option>
+                <option value="lab">Lab</option>
+              </select>
+            </label>
+            <div id="equipmentListUser"></div>
+          </div>
+        </div>
+
+        <div id="history" class="view" style="display:none">
+          <h2 class="page-title">Your Borrowing History</h2>
+          <div id="myRequests"></div>
+        </div>
+
+        <div id="return" class="view" style="display:none">
+          <h2 class="page-title">Return Equipment</h2>
+          <div id="returnRequestsUser"></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="js/user.js"></script>
+</body>
+</html>

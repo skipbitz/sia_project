@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Campus Borrowing & Returning</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Small helper to make the landing card look like the login page */
+    .landing-wrap{display:flex;align-items:center;justify-content:center;height:100vh;background:linear-gradient(180deg,#f6f7fb,#ffffff)}
+    .landing-card{width:420px;background:#fff;border-radius:8px;padding:28px 32px;box-shadow:0 8px 28px rgba(20,30,50,0.06);text-align:center}
+    .landing-card p{color:#555}
+    .landing-actions{display:flex;gap:12px;justify-content:center;margin-top:18px}
+    .logo-small{width:84px;height:84px;margin:0 auto 12px;display:block}
+  </style>
+  </head>
+<body>
+  <div class="landing-wrap">
+    <main class="landing-card">
+      <!-- Prefer using your PNG at /assets/CCALOGO.png. If missing, a built-in SVG will show. -->
+      <picture>
+        <source srcset="/assets/CCALOGO.png" type="image/png">
+        <img src="/assets/CCA-LOGO.svg" class="logo-small" alt="CCA logo" />
+      </picture>
+      <h2>Campus Equipment Borrowing & Returning</h2>
+      <p class="muted">Borrow equipment, submit return requests, and manage inventory.</p>
+      <div class="landing-actions">
+        <a class="btn primary" href="/login.html">Login</a>
+        <a class="btn" href="/register.html">Register</a>
+      </div>
+    </main>
+  </div>
+  <script src="js/main.js"></script>
+ </body>
+ </html>
