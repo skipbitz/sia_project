@@ -1,0 +1,122 @@
+:root{
+	--bg:#0f0f0f;
+	--panel:#ffffff;
+	--muted:#f4f6f8;
+	--accent:#1c5ed6;
+}
+/* make sizing predictable and avoid width+padding overflow */
+*, *::before, *::after { box-sizing: border-box; }
+
+/* Prevent horizontal page scroll caused by 100% widths + padding */
+html, body { overflow-x: hidden; }
+.app{display:flex;height:100vh;overflow:hidden}
+html,body{height:100%}
+body{font-family:Segoe UI,Arial,Helvetica,sans-serif;background:var(--bg);color:#111;margin:0}
+.sidebar{width:220px;background:#fff;color:#111;padding:36px 18px;box-sizing:border-box;border-right:1px solid rgba(0,0,0,0.08);height:100vh;position:sticky;top:0;overflow:auto}
+.sidebar .logo{display:flex;flex-direction:column;align-items:center;text-align:center;margin-bottom:18px}
+.sidebar .logo img, .logo-img{display:block;max-width:84px;width:72px;height:auto;margin-bottom:8px;object-fit:contain}
+.sidebar .logo .school-name{font-size:13px;font-weight:600;color:#111;margin-top:6px}
+/* username shown under school name in sidebar */
+.sidebar .logo .user-name{font-size:13px;color:#555;margin-top:6px}
+.sidebar nav{display:flex;flex-direction:column;gap:12px;padding-left:6px}
+.nav-item{color:#111;text-decoration:none;font-size:16px;padding:8px 6px;border-radius:6px}
+.nav-item:hover{background:rgba(0,0,0,0.04)}
+.nav-item.active{font-weight:700;background:rgba(0,0,0,0.06)}
+.main{flex:1;display:flex;flex-direction:column;background:var(--bg);height:100vh;overflow:auto}
+.main-header{height:72px;border-bottom:1px solid #ddd;display:flex;align-items:center;justify-content:space-between;padding:0 24px;background:var(--panel);flex:0 0 72px}
+.main-header{position:relative}
+.main-header .title{font-weight:700;text-align:center;flex:1}
+.main .content{padding:36px;margin:0;background:var(--panel);flex:1;overflow:auto}
+
+/* Avoid content area forcing horizontal scroll when inner elements are wide */
+.main .content > * { max-width: 100%; }
+.page-title{margin:8px 0 18px 0;text-align:center}
+.tiles{display:flex;gap:30px;margin-bottom:18px;justify-content:flex-start}
+.tile{padding:18px 22px;border-radius:8px;color:#fff;min-width:240px}
+.tile .tile-title{opacity:0.9}
+.tile .tile-value{font-size:26px;font-weight:700;margin-top:8px}
+.tile.blue{background:#1e5bd8}
+.tile.green{background:#15a56a}
+.tile.red{background:#e04242}
+.tile.purple{background:#6f42c1}
+.section-actions{padding:10px 0;margin-bottom:18px}
+.btn{background:var(--accent);color:#fff;border:none;padding:10px 14px;border-radius:6px;cursor:pointer}
+.btn.small{padding:6px 10px}
+
+/* simple logout link/button style (neutral, unobtrusive) */
+.logout-link{background:transparent;border:none;color:var(--accent);padding:6px 8px;cursor:pointer;font-weight:600;border-radius:4px}
+.logout-link:hover{background:rgba(28,94,214,0.08)}
+.btn.pill{border-radius:24px;padding:14px 28px;background:#1f4db3;font-size:18px}
+.inventory-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px;margin-top:18px}
+.card{background:#f0f0f0;border-radius:6px;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;color:#444;padding:12px}
+.card{min-height:140px}
+.card .img{background:#666;width:120px;height:90px;border-radius:4px}
+.card .meta{margin-left:12px}
+.card .name{font-weight:700;margin-top:6px}
+.card .meta-row{font-size:13px;color:#666}
+.list-panel{margin-top:8px;background:#fafafa;padding:12px;border-radius:6px;border:1px solid #eee}
+
+.table-panel{background:#fff;border:1px solid #eee;padding:10px;border-radius:6px}
+.table-panel .overdue{background:rgba(224,66,66,0.05)}
+.badge{display:inline-block;padding:4px 8px;border-radius:12px;font-size:12px;font-weight:700;margin-left:8px}
+.badge.overdue{background:#e04242;color:#fff}
+.data-table{width:100%;border-collapse:collapse}
+.data-table th,.data-table td{padding:10px;border-bottom:1px solid #eee;text-align:left}
+.data-table thead th{font-weight:700}
+.inventory-grid .card .img{width:100%;height:90px;background:#666;border-radius:4px}
+.inventory-grid .card .name{margin-top:10px}
+.subheading{margin-top:22px}
+
+/* Equipment list item styling used across user/admin views */
+.equip-item{display:flex;align-items:center;justify-content:space-between;padding:10px;border-radius:6px;background:#fafafa;border:1px solid #eee;margin:8px 0;gap:12px}
+.equip-item .meta{color:#666;font-size:13px;margin-left:8px}
+.equip-item .name{font-weight:700}
+.equip-item .actions{display:flex;gap:8px;align-items:center}
+.equip-item button.btn{padding:6px 10px;border-radius:6px;background:var(--accent);color:#fff;border:none;white-space:nowrap}
+.equip-item button.btn[disabled]{opacity:0.6;cursor:not-allowed}
+.equip-item button.btn.small{padding:6px 10px;background:#1f4db3}
+.equip-item button.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+
+/* Auth page styles */
+.auth-page{display:flex;align-items:center;justify-content:center;height:100vh;background:linear-gradient(180deg,#f6f7fb,#ffffff)}
+.auth-card{width:420px;background:#fff;border-radius:8px;padding:32px 36px;box-shadow:0 8px 28px rgba(20,30,50,0.08);text-align:center}
+.auth-logo img{width:84px;height:84px;margin:0 auto 12px;display:block}
+.auth-card h2{margin:6px 0 4px 0}
+.auth-card .muted{color:#7a7f86;font-size:13px;margin-bottom:14px}
+.auth-form{display:flex;flex-direction:column;gap:12px;text-align:left}
+.auth-form label{font-size:13px;color:#333}
+.auth-form input{width:100%;padding:10px 12px;border:1px solid #e5e7eb;border-radius:6px;margin-top:6px}
+.btn.primary{background:#07124b;color:#fff;padding:12px;border-radius:6px;border:none;width:100%;font-weight:700}
+.small{font-size:12px;color:#666}
+.auth-card .btn{margin-top:8px}
+
+/* small screens */
+@media(max-width:900px){
+	.sidebar{display:none}
+	.inventory-grid{grid-template-columns:repeat(2,1fr)}
+	.main .content{padding:18px}
+}
+
+/* Modal styles for Add Equipment */
+.modal{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.45);z-index:1200}
+.modal-dialog{background:#fff;border-radius:8px;padding:18px;width:420px;max-width:94%;box-shadow:0 10px 30px rgba(0,0,0,0.25)}
+.modal-form{display:flex;flex-direction:column;gap:10px}
+.modal-form h3{margin:0 0 6px 0}
+.modal-form label{display:flex;flex-direction:column;font-size:14px;color:#333}
+.modal-form input[type="text"], .modal-form input[type="number"], .modal-form select{padding:8px;border:1px solid #ddd;border-radius:6px;margin-top:6px}
+.modal-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:6px}
+.modal .btn.small{background:#ccc;color:#111}
+.modal .btn{background:#1f4db3}
+
+.recent-borrows-panel{margin-top:18px}
+.recent-borrows-panel h3{margin:8px 0}
+/* Most-borrowed small chart */
+.most-borrowed-chart{min-width:220px;max-width:320px;color:#fff}
+.most-borrowed-chart .mb-row{display:flex;align-items:center;gap:10px;margin:6px 0}
+.most-borrowed-chart .mb-label{flex:0 0 36%;font-weight:700;font-size:13px}
+.most-borrowed-chart .mb-bar-wrap{flex:1;background:rgba(255,255,255,0.12);height:14px;border-radius:8px;overflow:hidden}
+.most-borrowed-chart .mb-bar{height:14px;background:rgba(255,255,255,0.9);border-radius:8px}
+.most-borrowed-chart .mb-count{flex:0 0 40px;text-align:right;font-weight:700}
+/* Recent borrows panel */
+.recent-borrows-panel{margin-top:18px}
+.recent-borrows-panel h3{margin:8px 0}

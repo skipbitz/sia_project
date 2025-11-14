@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Campus Borrowing & Returning</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Landing/hero styles */
+    .landing-wrap{display:flex;align-items:center;justify-content:center;height:100vh;background:linear-gradient(180deg,#f6f7fb,#ffffff);padding:32px}
+    .landing-card{max-width:900px;width:100%;background:#fff;border-radius:10px;padding:32px;box-shadow:0 10px 40px rgba(20,30,50,0.06);text-align:center}
+    .landing-card p{color:#555;margin:8px 0 18px}
+    .landing-actions{display:flex;gap:12px;justify-content:center;margin-top:18px}
+    .hero-logo{display:block;margin:6px auto 18px;max-width:420px;width:60vw;height:auto;object-fit:contain}
+    .landing-title{margin:6px 0 4px 0;font-size:22px}
+    @media(min-width:1100px){
+      .landing-card{display:flex;flex-direction:column;align-items:center;padding:48px}
+      .hero-logo{max-width:360px}
+    }
+    @media(max-width:520px){
+      .landing-card{padding:20px}
+      .hero-logo{width:160px}
+    }
+  </style>
+  </head>
+<body>
+  <div class="landing-wrap">
+    <main class="landing-card">
+      <!-- Prefer using your PNG at /assets/CCALOGO.png. If missing, a built-in SVG will show. -->
+      <picture>
+        <source srcset="/assets/CCALOGO.png" type="image/png">
+        <img src="/assets/CCALOGO.png" class="hero-logo" alt="CCA logo" />
+      </picture>
+      <h2 class="landing-title">Welcome!<br/>Borrowing And Returning</h2>
+      <p class="muted">Borrow equipment, submit return requests, and manage inventory.</p>
+      <div class="landing-actions">
+        <a class="btn primary" href="login.html">Login</a>
+        <a class="btn" href="register.html">Register</a>
+      </div>
+    </main>
+  </div>
+  <script src="js/main.js"></script>
+ </body>
+ </html>

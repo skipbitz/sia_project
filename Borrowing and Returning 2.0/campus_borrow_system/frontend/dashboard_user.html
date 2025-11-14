@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>User Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="logo">
+        <img src="/assets/CCALOGO.png" alt="CCA logo" class="logo-img" />
+        <div class="school-name">Cavite Community Academy, INC.</div>
+        <div id="sidebarUserName" class="user-name"></div>
+      </div>
+      <nav>
+        <a href="#" class="nav-item active" data-view="home">Home</a>
+        <a href="#" class="nav-item" data-view="myrequest">My Request</a>
+        <a href="#" class="nav-item" data-view="history">Borrowing History</a>
+        <a href="#" class="nav-item" data-view="return">Return Equipment</a>
+      </nav>
+    </aside>
+
+    <div class="main">
+      <header class="main-header">
+        <div class="title">Equipment Borrowing and Returning Management Information System</div>
+        <div class="actions"><button id="logoutBtn" class="logout-link" type="button">Logout</button></div>
+      </header>
+
+      <section class="content">
+        <div id="home" class="view">
+          <div class="top-actions" style="display:flex;gap:18px;align-items:center;justify-content:flex-start;padding:18px 0">
+            <button id="btnViewEquipment" class="btn">View Available Equipment</button>
+            <button id="btnSubmitBorrow" class="btn">Submit Borrowing Request</button>
+            <button id="btnSubmitReturn" class="btn">Submit Returning Equipment</button>
+          </div>
+          <p class="muted">Welcome — use the sidebar to navigate.</p>
+          <div class="tiles" style="margin-top:18px">
+            <div class="tile green">
+              <div class="tile-title">Your Active Borrowings:</div>
+              <div class="tile-value" id="userActiveBorrow">--</div>
+            </div>
+          </div>
+          <!-- Recent Borrows (user-specific) -->
+          <div class="recent-borrows-panel">
+            <h3>Recent Borrows</h3>
+            <div class="table-panel">
+              <table id="recentBorrowsTableUser" class="data-table">
+                <thead><tr><th>Request ID</th><th>Equipment</th><th>Borrow Date</th><th>Status</th></tr></thead>
+                <tbody></tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div id="myrequest" class="view" style="display:none">
+          <h2 class="page-title">Submit Borrow Request</h2>
+          <div>
+            <label>Category
+              <select id="categoryFilterUser">
+                <option value="">All</option>
+                <option value="technical">Technical</option>
+                <option value="sports">Sports</option>
+                <option value="lab">Lab</option>
+              </select>
+            </label>
+            <div id="equipmentListUser"></div>
+          </div>
+        </div>
+
+        <div id="history" class="view" style="display:none">
+          <h2 class="page-title">Your Borrowing History</h2>
+          <div id="myRequests"></div>
+        </div>
+
+        <div id="return" class="view" style="display:none">
+          <h2 class="page-title">Return Equipment</h2>
+          <div id="returnRequestsUser"></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="js/user.js"></script>
+  <!-- Borrow Request Modal -->
+  <div id="borrowRequestModal" class="modal" aria-hidden="true" style="display:none">
+    <div class="modal-dialog" role="dialog" aria-modal="true">
+      <form id="borrowRequestForm" class="modal-form">
+        <h3>Request Borrow</h3>
+        <input type="hidden" name="equipment_id" id="borrow_equipment_id" />
+        <label>Quantity
+          <input name="quantity" id="borrow_quantity" type="number" min="1" value="1" required />
+        </label>
+        <label>Borrow Date
+          <input name="borrow_date" id="borrow_date" type="date" required />
+        </label>
+        <label>Borrow Time
+          <input name="borrow_time" id="borrow_time" type="time" required />
+        </label>
+        <label>Return Date
+          <input name="return_date" id="return_date" type="date" required />
+        </label>
+        <label>Return Time
+          <input name="return_time" id="return_time" type="time" required />
+        </label>
+        <div class="modal-actions">
+          <button type="button" id="borrowCancel" class="btn small">Cancel</button>
+          <button type="submit" id="borrowSubmit" class="btn">Submit Request</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

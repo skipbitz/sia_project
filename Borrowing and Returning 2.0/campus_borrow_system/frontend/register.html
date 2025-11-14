@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Register - Campus Borrowing System</title>
+  <link rel="stylesheet" href="css/style.css">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+</head>
+<body class="auth-page">
+  <main class="auth-card">
+    <div class="auth-logo">
+      <img src="/assets/CCALOGO.png" alt="CCA logo" width="84" height="84" />
+    </div>
+    <h2>Registration</h2>
+    <p class="muted">For Both Staff & Students</p>
+
+    <form id="registerForm" class="auth-form">
+      <label>Student Number
+        <input name="student_number" placeholder="College Reg. No." />
+      </label>
+      <label>College Email ID
+        <input name="username" type="email" placeholder="username@collegename.ac.in" required />
+      </label>
+      <label>Password
+        <input name="password" type="password" required />
+      </label>
+      <label>Confirm Password
+        <input name="confirm_password" type="password" required />
+      </label>
+
+      <button class="btn primary" type="submit">Register</button>
+    </form>
+
+    <p class="muted small">Already a User? <a href="login.html">Login now</a></p>
+  </main>
+  <script src="js/main.js"></script>
+</body>
+</html>
